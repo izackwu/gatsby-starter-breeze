@@ -6,6 +6,9 @@ exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
 
   const blogPost = path.resolve(`./src/templates/blog-post.js`)
+  const postListPaginated = path.resolve(
+    `./src/templates/post-list-paginated.js`
+  )
   const result = await graphql(
     `
       {
@@ -49,6 +52,24 @@ exports.createPages = async ({ graphql, actions }) => {
       },
     })
   })
+
+  const postsPerPage = 10
+  const numPages = Math.ceil(posts.length / postsPerPage)
+  // Create pagination for post list
+  Array(numPages)
+    .fill()
+    .forEach((_, i) => {
+      createPage({
+        path: i === 0 ? `/` : `/page/${i + 1}`,
+        component: postListPaginated,
+        context: {
+          currentPage: i + 1,
+          totalPage: numPages,
+          limit: postsPerPage,
+          skip: i * postsPerPage,
+        },
+      })
+    })
 }
 
 exports.onCreateNode = ({ node, actions, getNode }) => {

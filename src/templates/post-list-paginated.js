@@ -6,10 +6,10 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { rhythm } from "../utils/typography"
 
-const BlogIndex = ({ data, location }) => {
+const BlogIndex = ({ data, pageContext, location }) => {
   const siteTitle = data.site.siteMetadata.title
   const posts = data.allMarkdownRemark.edges
-
+  const { totalPage, currentPage } = pageContext
   return (
     <Layout location={location} title={siteTitle}>
       <SEO title="All posts" />
@@ -40,6 +40,35 @@ const BlogIndex = ({ data, location }) => {
           </article>
         )
       })}
+      <div style={{ display: "flex" }}>
+        <div
+          style={{
+            textAlign: "left",
+            width: "50%",
+          }}
+        >
+          {currentPage >= 2 && (
+            <Link
+              to={currentPage - 1 === 1 ? "/" : "/page/" + (currentPage - 1)}
+              rel="prev"
+            >
+              ← PREV
+            </Link>
+          )}
+        </div>
+        <div
+          style={{
+            textAlign: "right",
+            width: "50%",
+          }}
+        >
+          {currentPage <= totalPage - 1 && (
+            <Link to={"/page/" + (currentPage + 1)} rel="next">
+              NEXT →
+            </Link>
+          )}
+        </div>
+      </div>
     </Layout>
   )
 }
@@ -47,13 +76,17 @@ const BlogIndex = ({ data, location }) => {
 export default BlogIndex
 
 export const pageQuery = graphql`
-  query {
+  query($skip: Int!, $limit: Int!) {
     site {
       siteMetadata {
         title
       }
     }
-    allMarkdownRemark(sort: { fields: [fields___date], order: DESC }) {
+    allMarkdownRemark(
+      sort: { fields: [fields___date], order: DESC }
+      limit: $limit
+      skip: $skip
+    ) {
       edges {
         node {
           excerpt
