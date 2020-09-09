@@ -9,10 +9,12 @@ exports.createPages = async ({ graphql, actions }) => {
   const postListPaginated = path.resolve(
     `./src/templates/post-list-paginated.js`
   )
+  const tagsTemplate = path.resolve("src/templates/tags.js")
+  const tagsListTemplate = path.resolve("src/templates/tags-list.js")
   const result = await graphql(
     `
       {
-        allMarkdownRemark(
+        postsRemark: allMarkdownRemark(
           sort: { fields: [fields___date], order: DESC }
           limit: 1000
         ) {
@@ -27,6 +29,11 @@ exports.createPages = async ({ graphql, actions }) => {
             }
           }
         }
+        tagsGroup: allMarkdownRemark(limit: 1000) {
+          group(field: frontmatter___tags) {
+            fieldValue
+          }
+        }
       }
     `
   )
@@ -36,8 +43,7 @@ exports.createPages = async ({ graphql, actions }) => {
   }
 
   // Create blog posts pages.
-  const posts = result.data.allMarkdownRemark.edges
-
+  const posts = result.data.postsRemark.edges
   posts.forEach((post, index) => {
     const previous = index === posts.length - 1 ? null : posts[index + 1].node
     const next = index === 0 ? null : posts[index - 1].node
@@ -53,9 +59,9 @@ exports.createPages = async ({ graphql, actions }) => {
     })
   })
 
+  // Create pagination for posts list
   const postsPerPage = 8
   const numPages = Math.ceil(posts.length / postsPerPage)
-  // Create pagination for post list
   Array(numPages)
     .fill()
     .forEach((_, i) => {
@@ -70,6 +76,22 @@ exports.createPages = async ({ graphql, actions }) => {
         },
       })
     })
+
+  // Make tag pages
+  const tags = result.data.tagsGroup.group
+  tags.forEach(tag => {
+    createPage({
+      path: `/tags/${_.kebabCase(tag.fieldValue)}/`,
+      component: tagsTemplate,
+      context: {
+        tag: tag.fieldValue,
+      },
+    })
+  })
+  createPage({
+    path: "/tags/",
+    component: tagsListTemplate,
+  })
 }
 
 exports.onCreateNode = ({ node, actions, getNode }) => {
@@ -106,7 +128,7 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
     // any number of tags
     if (node.frontmatter.tags) {
       const tagSlugs = _.uniq(
-        node.frontmatter.tags.map(tag => `/tag/${_.kebabCase(tag)}/`)
+        node.frontmatter.tags.map(tag => `/tags/${_.kebabCase(tag)}/`)
       )
       createNodeField({
         node,
