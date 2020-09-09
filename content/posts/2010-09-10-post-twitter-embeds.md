@@ -1,9 +1,7 @@
 ---
 layout: post
 title: "Post: Twitter Embed"
-date: "2010-09-10"
-categories:
-  - Media
+category: Media
 tags:
   - content
   - embeds

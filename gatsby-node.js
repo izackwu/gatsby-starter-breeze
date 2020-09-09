@@ -1,3 +1,4 @@
+const _ = require("lodash")
 const path = require(`path`)
 const { createFilePath } = require(`gatsby-source-filesystem`)
 
@@ -9,7 +10,7 @@ exports.createPages = async ({ graphql, actions }) => {
     `
       {
         allMarkdownRemark(
-          sort: { fields: [frontmatter___date], order: DESC }
+          sort: { fields: [fields___date], order: DESC }
           limit: 1000
         ) {
           edges {
@@ -52,13 +53,55 @@ exports.createPages = async ({ graphql, actions }) => {
 
 exports.onCreateNode = ({ node, actions, getNode }) => {
   const { createNodeField } = actions
-
   if (node.internal.type === `MarkdownRemark`) {
-    const value = createFilePath({ node, getNode })
+    // slug
+    let slug = node.frontmatter.slug || createFilePath({ node, getNode })
+    console.log("Slug:", slug)
     createNodeField({
-      name: `slug`,
       node,
-      value,
+      name: "slug",
+      value: slug,
     })
+    // date: front matter -> file name -> default date
+    try {
+      var date = node.frontmatter.date
+      if (!date) {
+        const filename = node.fileAbsolutePath
+          .split(/.*[\/|\\]/)[1]
+          .split(".")[0]
+        date = new Date(filename.substring(0, 10))
+      }
+    } catch (error) {
+      console.log("Failed to get date, use default date instead", error)
+      date = new Date("1999-11-26")
+    } finally {
+      createNodeField({
+        node,
+        name: "date",
+        value: date,
+      })
+      console.log("date:", date)
+    }
+    // any number of tags
+    if (node.frontmatter.tags) {
+      const tagSlugs = _.uniq(
+        node.frontmatter.tags.map(tag => `/tag/${_.kebabCase(tag)}/`)
+      )
+      createNodeField({
+        node,
+        name: "tagSlugs",
+        value: tagSlugs,
+      })
+      console.log("tags:", tagSlugs)
+    }
+    // exactly one category
+    const category = node.frontmatter.category || "uncategorized"
+    const categorySlug = `/category/${_.kebabCase(category)}`
+    createNodeField({
+      node,
+      name: "categorySlug",
+      value: categorySlug,
+    })
+    console.log("category:", categorySlug)
   }
 }

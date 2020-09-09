@@ -1,8 +1,6 @@
 ---
 layout: post
-date: "2009-09-05"
-categories:
-  - Edge Case
+category: edge case
 tags:
   - edge case
   - layout

@@ -1,10 +1,9 @@
 ---
 layout: post
 title: "Markup: Another Post with Images"
-date: "2014-05-22"
 excerpt: "Examples and code for displaying images in posts."
 image: "http://farm9.staticflickr.com/8426/7758832526_cc8f681e48_c.jpg"
-tags: 
+tags:
   - sample post
   - images
   - test
@@ -29,9 +28,13 @@ Apply the `half` class like so to display two images side by side that share the
 
 ```html
 <figure class="half">
-    <a href="/images/image-filename-1-large.jpg"><img src="/images/image-filename-1.jpg"></a>
-    <a href="/images/image-filename-2-large.jpg"><img src="/images/image-filename-2.jpg"></a>
-    <figcaption>Caption describing these two images.</figcaption>
+  <a href="/images/image-filename-1-large.jpg"
+    ><img src="/images/image-filename-1.jpg"
+  /></a>
+  <a href="/images/image-filename-2-large.jpg"
+    ><img src="/images/image-filename-2.jpg"
+  /></a>
+  <figcaption>Caption describing these two images.</figcaption>
 </figure>
 ```
 
@@ -49,10 +52,10 @@ Apply the `third` class like so to display three images side by side that share 
 
 ```html
 <figure class="third">
-	<img src="/images/image-filename-1.jpg">
-	<img src="/images/image-filename-2.jpg">
-	<img src="/images/image-filename-3.jpg">
-	<figcaption>Caption describing these three images.</figcaption>
+  <img src="/images/image-filename-1.jpg" />
+  <img src="/images/image-filename-2.jpg" />
+  <img src="/images/image-filename-3.jpg" />
+  <figcaption>Caption describing these three images.</figcaption>
 </figure>
 ```
 
@@ -76,9 +79,9 @@ Here is the block you might want to use:
 {% highlight liquid %}
 {% raw %}
 {% capture images %}
-	http://placehold.it/600x300.jpg
-	http://placehold.it/600x300.jpg
-	http://placehold.it/600x300.jpg
+http://placehold.it/600x300.jpg
+http://placehold.it/600x300.jpg
+http://placehold.it/600x300.jpg
 {% endcapture %}
 {% include gallery images=images caption="Test images" cols=3 %}
 {% endraw %}
@@ -88,13 +91,13 @@ Parameters:
 
 - `caption`: Sets the caption under the gallery (see `figcaption` HTML tag above);
 - `cols`: Sets the number of columns of the gallery.
-Available values: [1..3].
+  Available values: [1..3].
 
 It will look something like this:
 
 {% capture images %}
-	http://placehold.it/600x300.jpg
-	http://placehold.it/600x300.jpg
-	http://placehold.it/600x300.jpg
+http://placehold.it/600x300.jpg
+http://placehold.it/600x300.jpg
+http://placehold.it/600x300.jpg
 {% endcapture %}
 {% include gallery images=images caption="Test images" cols=3 %}

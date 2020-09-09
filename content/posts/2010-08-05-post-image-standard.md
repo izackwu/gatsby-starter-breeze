@@ -1,9 +1,7 @@
 ---
 layout: post
 title: "Post: Image (Standard)"
-date: "2010-08-05"
-categories:
-  - Post Formats
+category: Post Formats
 tags:
   - image
   - Post Formats
@@ -16,7 +14,7 @@ Standard image with no width modifier classes applied.
 **HTML:**
 
 ```html
-{% raw %}<img src="{{ site.url }}/images/filename.jpg" alt="">{% endraw %}
+{% raw %}<img src="{{ site.url }}/images/filename.jpg" alt="" />{% endraw %}
 ```
 
 **or Kramdown:**

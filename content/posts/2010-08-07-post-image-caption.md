@@ -1,9 +1,7 @@
 ---
 layout: post
 title: "Post: Image (Caption)"
-date: "2010-08-07"
-categories:
-  - Post Formats
+category: Post Formats
 tags:
   - image
   - Post Formats

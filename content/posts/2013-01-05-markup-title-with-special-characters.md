@@ -1,9 +1,7 @@
 ---
 layout: post
 title: "Markup: Title with Special&nbsp;---&nbsp;Characters"
-date: "2013-01-05"
-categories:
-  - Markup
+category: Markup
 tags:
   - html
   - markup

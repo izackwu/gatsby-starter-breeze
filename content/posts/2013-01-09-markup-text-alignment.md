@@ -1,9 +1,7 @@
 ---
 layout: post
 title: "Markup: Text Alignment"
-date: "2013-01-09"
-categories:
-  - Markup
+category: Markup
 tags:
   - alignment
   - content

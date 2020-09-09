@@ -1,9 +1,7 @@
 ---
 layout: post
 title: "Post: Video (YouTube)"
-date: "2010-06-02"
-categories:
-  - Post Formats
+category: Post Formats
 tags:
   - Post Formats
 ---

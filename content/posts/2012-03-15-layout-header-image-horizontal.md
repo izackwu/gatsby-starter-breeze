@@ -1,11 +1,8 @@
 ---
 layout: post
 title: "Layout: Header Image (Horizontal)"
-date: "2012-03-15"
 image: images/unsplash-image-1.jpg
-categories:
-  - Layout
-  - Uncategorized
+category: Layout
 tags:
   - edge case
   - featured image
