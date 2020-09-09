@@ -53,7 +53,7 @@ exports.createPages = async ({ graphql, actions }) => {
     })
   })
 
-  const postsPerPage = 10
+  const postsPerPage = 8
   const numPages = Math.ceil(posts.length / postsPerPage)
   // Create pagination for post list
   Array(numPages)

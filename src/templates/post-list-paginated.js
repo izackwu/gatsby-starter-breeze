@@ -44,7 +44,7 @@ const BlogIndex = ({ data, pageContext, location }) => {
         <div
           style={{
             textAlign: "left",
-            width: "50%",
+            width: "40%",
           }}
         >
           {currentPage >= 2 && (
@@ -56,10 +56,13 @@ const BlogIndex = ({ data, pageContext, location }) => {
             </Link>
           )}
         </div>
+        <div style={{ textAlign: "center", width: "20%" }}>
+          <span>Page {currentPage}</span>
+        </div>
         <div
           style={{
             textAlign: "right",
-            width: "50%",
+            width: "40%",
           }}
         >
           {currentPage <= totalPage - 1 && (
