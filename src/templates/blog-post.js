@@ -6,6 +6,8 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { rhythm, scale } from "../utils/typography"
 
+const _ = require("lodash")
+
 const BlogPostTemplate = ({ data, pageContext, location }) => {
   const post = data.markdownRemark
   const siteTitle = data.site.siteMetadata.title
@@ -27,6 +29,28 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
           >
             {post.frontmatter.title}
           </h1>
+          Tags:
+          <ul
+            style={{
+              display: `inline-flex`,
+              justifyContent: `flex-start`,
+              flexWrap: `wrap`,
+              listStyle: `none`,
+              margin: `0 0 0 10px`,
+            }}
+          >
+            {post.frontmatter.tags.map(tag => {
+              return (
+                <li
+                  style={{
+                    marginRight: `15px`,
+                  }}
+                >
+                  <Link to={`/tags/${_.kebabCase(tag)}/`}>{tag}</Link>
+                </li>
+              )
+            })}
+          </ul>
           <p
             style={{
               ...scale(-1 / 5),
@@ -97,6 +121,7 @@ export const pageQuery = graphql`
       frontmatter {
         title
         description
+        tags
       }
     }
   }

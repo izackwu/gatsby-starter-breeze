@@ -125,18 +125,6 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
       })
       console.log("date:", date)
     }
-    // any number of tags
-    if (node.frontmatter.tags) {
-      const tagSlugs = _.uniq(
-        node.frontmatter.tags.map(tag => `/tags/${_.kebabCase(tag)}/`)
-      )
-      createNodeField({
-        node,
-        name: "tagSlugs",
-        value: tagSlugs,
-      })
-      console.log("tags:", tagSlugs)
-    }
     // exactly one category
     const category = node.frontmatter.category || "uncategorized"
     const categorySlug = `/category/${_.kebabCase(category)}`
