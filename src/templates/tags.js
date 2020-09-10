@@ -1,5 +1,4 @@
 import React from "react"
-import PropTypes from "prop-types"
 
 // Components
 import { Link, graphql } from "gatsby"
