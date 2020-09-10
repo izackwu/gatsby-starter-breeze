@@ -125,14 +125,5 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
       })
       console.log("date:", date)
     }
-    // exactly one category
-    const category = node.frontmatter.category || "uncategorized"
-    const categorySlug = `/category/${_.kebabCase(category)}`
-    createNodeField({
-      node,
-      name: "categorySlug",
-      value: categorySlug,
-    })
-    console.log("category:", categorySlug)
   }
 }
