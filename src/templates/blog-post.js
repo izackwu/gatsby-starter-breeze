@@ -29,7 +29,6 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
           >
             {post.frontmatter.title}
           </h1>
-          Tags:
           <ul
             style={{
               display: `inline-flex`,
@@ -39,17 +38,27 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
               margin: `0 0 0 10px`,
             }}
           >
-            {post.frontmatter.tags.map(tag => {
-              return (
-                <li
-                  style={{
-                    marginRight: `15px`,
-                  }}
-                >
-                  <Link to={`/tags/${_.kebabCase(tag)}/`}>{tag}</Link>
-                </li>
-              )
-            })}
+            {post.frontmatter.tags &&
+              post.frontmatter.tags.map(tag => {
+                return (
+                  <li>
+                    <Link
+                      to={`/tags/${_.kebabCase(tag)}/`}
+                      style={{
+                        marginRight: `15px`,
+                        padding: `0 1.5em`,
+                        border: `1px solid #e6e6e6`,
+                        borderRadius: `1.25em`,
+                        textDecoration: `none`,
+                        display: `inline-block`,
+                        boxShadow: `none`,
+                      }}
+                    >
+                      {tag}
+                    </Link>
+                  </li>
+                )
+              })}
           </ul>
           <p
             style={{
