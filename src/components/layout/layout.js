@@ -1,19 +1,17 @@
 import React from "react"
+import styles from "./layout.module.scss"
+import SEO from "./seo"
 
-const Layout = ({ location, title, children }) => {
+const Layout = ({ title, description, socialImage, children, meta }) => {
   return (
-    <div
-      style={{
-        marginLeft: `auto`,
-        marginRight: `auto`,
-      }}
-    >
-      <main>{children}</main>
-      <footer>
-        © {new Date().getFullYear()}, Built with
-        {` `}
-        <a href="https://www.gatsbyjs.org">Gatsby</a>
-      </footer>
+    <div className={styles.layout}>
+      <SEO
+        title={title}
+        description={description}
+        meta={meta}
+        socialImage={socialImage}
+      />
+      {children}
     </div>
   )
 }

@@ -4,8 +4,9 @@ import React from "react"
 import kebabCase from "lodash/kebabCase"
 
 // Components
-import { Helmet } from "react-helmet"
 import { Link, graphql } from "gatsby"
+import Sidebar from "../components/sidebar"
+import Layout from "../components/layout"
 
 const TagsPage = ({
   data: {
@@ -15,8 +16,8 @@ const TagsPage = ({
     },
   },
 }) => (
-  <div>
-    <Helmet title={title} />
+  <Layout>
+    <Sidebar />
     <div>
       <h1>Tags</h1>
       <ul>
@@ -29,7 +30,7 @@ const TagsPage = ({
         ))}
       </ul>
     </div>
-  </div>
+  </Layout>
 )
 
 export default TagsPage

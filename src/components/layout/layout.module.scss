@@ -1,0 +1,8 @@
+@import "../../scss/variables";
+
+.layout {
+  max-width: $layout-width;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+}
