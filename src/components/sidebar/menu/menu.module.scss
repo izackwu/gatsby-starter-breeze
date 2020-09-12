@@ -1,10 +1,26 @@
+@import "../../../scss/variables";
+
 .menu {
   flex-grow: 1;
 
   &__item {
     display: block;
-    font-size: 20px;
+    font-size: $nav-link-size;
     margin-bottom: 10px;
+    border-right: 2px solid transparent;
     padding: 8px 28px 8px 30px;
+    transition: all 0.2s linear;
+    color: $deep-dark-accent;
+    &:hover {
+      border-right: 2px solid
+        rgba($color-accent, $nav-item-hover-indicator-alpha);
+      background: rgba($color-accent, $nav-item-hover-background-alpha);
+      color: darken($color-accent, $nav-item-hover-color-darken);
+    }
+    &_active {
+      border-right: 2px solid $color-accent;
+      background: rgba($color-accent, $nav-item-active-background-alpha);
+      color: darken($color-accent, $nav-item-active-color-darken);
+    }
   }
 }

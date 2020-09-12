@@ -6,7 +6,11 @@ const Menu = ({ menu }) => {
   return (
     <div className={styles["menu"]}>
       {menu.map(item => (
-        <Link to={item.url} className={styles["menu__item"]}>
+        <Link
+          to={item.url}
+          className={styles["menu__item"]}
+          activeClassName={styles["menu__item_active"]}
+        >
           {item.label}
         </Link>
       ))}

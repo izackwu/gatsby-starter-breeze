@@ -1,8 +1,10 @@
+@import "../../scss/variables";
+
 .sidebar {
   position: sticky;
   top: 0;
   height: 100vh;
-  width: 25%;
+  width: $side-container-width;
   text-align: right;
   padding: 20px 0 50px;
   display: flex;

@@ -1,3 +1,9 @@
+@import "../../scss/variables";
+
 .main {
-  width: 75%;
+  width: $main-container-width;
+  min-height: 100vh;
+  padding: 20px 0 20px 0;
+  background: $front-container-background;
+  box-shadow: 0 0 16px rgba(0, 0, 0, 0.12);
 }

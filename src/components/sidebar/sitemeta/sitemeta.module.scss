@@ -1,20 +1,33 @@
+@import "../../../scss/variables";
+
 .sitemeta {
   padding: 30px 28px 30px 20px;
   margin-bottom: 10px;
   transition: all 0.2s linear;
-  color: #000;
+  color: $deep-dark-accent;
   border-right: 2px solid transparent;
   // a-block
   display: block;
   text-decoration: none !important;
 
   &__title {
-    font-size: 30px;
-    line-height: 42px;
+    font-size: $nav-title-size;
+    line-height: $nav-title-size * 1.4;
   }
 
   &__description {
     margin-top: 8px;
-    font-size: 18px;
+    font-size: $nav-subtitle-size;
+  }
+
+  &:hover {
+    border-right: 2px solid rgba($color-accent, $nav-item-hover-indicator-alpha);
+    background: rgba($color-accent, $nav-item-hover-background-alpha);
+    color: darken($color-accent, $nav-item-hover-color-darken);
+  }
+  &_active {
+    border-right: 2px solid $color-accent;
+    background: rgba($color-accent, $nav-item-active-background-alpha);
+    color: darken($color-accent, $nav-item-active-color-darken);
   }
 }
