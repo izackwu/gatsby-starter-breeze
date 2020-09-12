@@ -22,6 +22,7 @@ const Sidebar = ({ toc }) => {
     `
   )
   const sampleMenu = [
+    { url: "/tags", label: "Tags" },
     { url: "#", label: "About Me" },
     { url: "#", label: "Contact" },
   ]

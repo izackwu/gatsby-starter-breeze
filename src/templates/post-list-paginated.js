@@ -3,6 +3,7 @@ import { Link, graphql } from "gatsby"
 
 import Layout from "../components/layout"
 import Sidebar from "../components/sidebar"
+import Main from "../components/main"
 
 const BlogIndex = ({ data, pageContext }) => {
   const posts = data.allMarkdownRemark.edges
@@ -10,7 +11,7 @@ const BlogIndex = ({ data, pageContext }) => {
   return (
     <Layout title="All posts">
       <Sidebar />
-      <div>
+      <Main>
         {posts.map(({ node }) => {
           const title = node.frontmatter.title || node.fields.slug
           return (
@@ -65,7 +66,7 @@ const BlogIndex = ({ data, pageContext }) => {
             )}
           </div>
         </div>
-      </div>
+      </Main>
     </Layout>
   )
 }

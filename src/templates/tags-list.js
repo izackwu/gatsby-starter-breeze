@@ -7,6 +7,7 @@ import kebabCase from "lodash/kebabCase"
 import { Link, graphql } from "gatsby"
 import Sidebar from "../components/sidebar"
 import Layout from "../components/layout"
+import Main from "../components/main"
 
 const TagsPage = ({
   data: {
@@ -18,7 +19,7 @@ const TagsPage = ({
 }) => (
   <Layout>
     <Sidebar />
-    <div>
+    <Main>
       <h1>Tags</h1>
       <ul>
         {group.map(tag => (
@@ -29,7 +30,7 @@ const TagsPage = ({
           </li>
         ))}
       </ul>
-    </div>
+    </Main>
   </Layout>
 )
 

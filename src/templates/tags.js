@@ -4,6 +4,7 @@ import React from "react"
 import { Link, graphql } from "gatsby"
 import Sidebar from "../components/sidebar"
 import Layout from "../components/layout"
+import Main from "../components/main"
 
 const Tags = ({ pageContext, data }) => {
   const { tag } = pageContext
@@ -15,7 +16,7 @@ const Tags = ({ pageContext, data }) => {
   return (
     <Layout title="All Tags">
       <Sidebar />
-      <div>
+      <Main>
         <h1>{tagHeader}</h1>
         <ul>
           {edges.map(({ node }) => {
@@ -29,7 +30,7 @@ const Tags = ({ pageContext, data }) => {
           })}
         </ul>
         <Link to="/tags">All tags</Link>
-      </div>
+      </Main>
     </Layout>
   )
 }

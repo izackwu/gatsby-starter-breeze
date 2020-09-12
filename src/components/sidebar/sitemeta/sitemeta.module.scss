@@ -1,0 +1,20 @@
+.sitemeta {
+  padding: 30px 28px 30px 20px;
+  margin-bottom: 10px;
+  transition: all 0.2s linear;
+  color: #000;
+  border-right: 2px solid transparent;
+  // a-block
+  display: block;
+  text-decoration: none !important;
+
+  &__title {
+    font-size: 30px;
+    line-height: 42px;
+  }
+
+  &__description {
+    margin-top: 8px;
+    font-size: 18px;
+  }
+}

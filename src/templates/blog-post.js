@@ -3,6 +3,7 @@ import { Link, graphql } from "gatsby"
 
 import Layout from "../components/layout"
 import Sidebar from "../components/sidebar"
+import Main from "../components/main"
 
 const _ = require("lodash")
 
@@ -17,7 +18,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
       socialImage={post.frontmatter.image}
     >
       <Sidebar />
-      <div>
+      <Main>
         <article>
           <header>
             <h1
@@ -97,7 +98,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
             </li>
           </ul>
         </nav>
-      </div>
+      </Main>
     </Layout>
   )
 }
