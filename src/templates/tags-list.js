@@ -17,7 +17,7 @@ const TagsPage = ({
     },
   },
 }) => (
-  <Layout>
+  <Layout title="All Tags">
     <Sidebar />
     <Main>
       <h1>Tags</h1>
