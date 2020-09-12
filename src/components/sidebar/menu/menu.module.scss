@@ -11,7 +11,9 @@
     padding: 8px 28px 8px 30px;
     transition: all 0.2s linear;
     color: $deep-dark-accent;
+    text-decoration: none !important;
     &:hover {
+      text-decoration: none !important;
       border-right: 2px solid
         rgba($color-accent, $nav-item-hover-indicator-alpha);
       background: rgba($color-accent, $nav-item-hover-background-alpha);

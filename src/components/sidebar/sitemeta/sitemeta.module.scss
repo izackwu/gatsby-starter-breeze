@@ -9,6 +9,9 @@
   // a-block
   display: block;
   text-decoration: none !important;
+  &:hover {
+    text-decoration: none !important;
+  }
 
   &__title {
     font-size: $nav-title-size;
