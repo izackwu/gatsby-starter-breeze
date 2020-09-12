@@ -18,8 +18,12 @@ $color-text: $deep-dark-accent;
 }
 
 // Font
-$default-font-list: "Helvetica Neue", Helvetica, Arial, "Microsoft Yahei",
-  "Hiragino Sans GB", "Heiti SC", "WenQuanYi Micro Hei";
+$default-font-list: "Noto Serif SC", "Helvetica Neue", Helvetica, Arial,
+  "Microsoft Yahei", "Hiragino Sans GB", "Heiti SC", "WenQuanYi Micro Hei",
+  sans-serif;
+$ui-font-list: "Quicksand", "Helvetica Neue", Helvetica, Arial, "Noto Serif SC",
+  "Microsoft Yahei", "Hiragino Sans GB", "Heiti SC", "WenQuanYi Micro Hei",
+  sans-serif;
 
 $h1-size: 30px;
 $h-diff: 3px;
