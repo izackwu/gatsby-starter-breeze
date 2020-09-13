@@ -4,6 +4,7 @@ import { Link, graphql } from "gatsby"
 import Layout from "../components/layout"
 import Sidebar from "../components/sidebar"
 import Main from "../components/main"
+import PostList from "../components/postlist"
 
 const BlogIndex = ({ data, pageContext }) => {
   const posts = data.allMarkdownRemark.edges
@@ -12,28 +13,7 @@ const BlogIndex = ({ data, pageContext }) => {
     <Layout title="All posts">
       <Sidebar />
       <Main>
-        {posts.map(({ node }) => {
-          const title = node.frontmatter.title || node.fields.slug
-          return (
-            <article key={node.fields.slug}>
-              <header>
-                <h3>
-                  <Link style={{ boxShadow: `none` }} to={node.fields.slug}>
-                    {title}
-                  </Link>
-                </h3>
-                <small>{node.fields.date}</small>
-              </header>
-              <section>
-                <p
-                  dangerouslySetInnerHTML={{
-                    __html: node.frontmatter.description || node.excerpt,
-                  }}
-                />
-              </section>
-            </article>
-          )
-        })}
+        <PostList posts={posts} />
         <div style={{ display: "flex" }}>
           <div
             style={{
@@ -95,6 +75,7 @@ export const pageQuery = graphql`
           frontmatter {
             title
             description
+            image
           }
         }
       }
