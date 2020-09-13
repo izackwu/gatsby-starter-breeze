@@ -10,9 +10,9 @@ const PostList = ({ posts }) => {
         <div className={styles["postlist__item_wrapper"]}>
           <Link to={node.fields.slug} className={styles["item"]}>
             <div className={styles["item__info"]}>
-              <div className={styles["item__info__title"]}>
+              <h2 className={styles["item__info__title"]}>
                 {node.frontmatter.title}
-              </div>
+              </h2>
               <div className={styles["item__info__description"]}>
                 {node.frontmatter.description || node.excerpt}
               </div>
