@@ -2,7 +2,7 @@
 layout: post
 title: "Markup: Text Readability Test"
 excerpt: "A bunch of text to test readability."
-image: "https://images.unsplash.com/photo-1505051508008-923feaf90180?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&dl=anton-darius-ebHCU8n7G38-unsplash.jpg&w=640"
+image: "https://images.unsplash.com/photo-1505051508008-923feaf90180?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&dl=anton-darius-ebHCU8n7G38-unsplash.jpg&w=2400"
 tags:
   - sample post
   - readability
