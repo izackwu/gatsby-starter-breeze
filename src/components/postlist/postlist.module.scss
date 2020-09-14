@@ -1,12 +1,13 @@
 @import "../../scss/variables";
 
 .postlist {
-  &:not(:last-child) {
-    .item {
-      border-bottom: 1px solid rgba(128, 128, 128, 0.12);
+  > * {
+    &:not(:last-child) {
+      .item {
+        border-bottom: 1px solid rgba(128, 128, 128, 0.12);
+      }
     }
   }
-
   &__item_wrapper {
     &:hover {
       background: rgba(0, 0, 0, 0.03);
@@ -33,7 +34,6 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-
   &__info {
     flex-grow: 1;
 
