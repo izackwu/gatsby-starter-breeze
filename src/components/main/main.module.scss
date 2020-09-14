@@ -2,7 +2,10 @@
 
 .main {
   width: $main-container-width;
-  min-height: 100vh;
+  // min-height > 100vh to make sure that a scrollbar always exists
+  // otherwise, when there's too little content, height <= 100vh, no scrollbar exists,
+  // page width differs from usual, which will cause inconsistent layout
+  min-height: 101vh;
   padding: 20px 0 20px 0;
   background: $front-container-background;
   box-shadow: 0 0 16px rgba(0, 0, 0, 0.12);
