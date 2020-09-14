@@ -1,0 +1,18 @@
+@import "../../scss/variables";
+
+.tags {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 100%;
+  padding: 0;
+  font-size: $tags-size;
+
+  &__item {
+    display: inline-block;
+    padding: 15px 40px 15px 0;
+    overflow: hidden;
+  }
+}

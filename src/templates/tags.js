@@ -1,10 +1,12 @@
 import React from "react"
+import { graphql } from "gatsby"
 
 // Components
-import { Link, graphql } from "gatsby"
 import Sidebar from "../components/sidebar"
 import Layout from "../components/layout"
 import Main from "../components/main"
+import Page from "../components/page"
+import PostList from "../components/postlist"
 
 const Tags = ({ pageContext, data }) => {
   const { tag } = pageContext
@@ -17,19 +19,9 @@ const Tags = ({ pageContext, data }) => {
     <Layout title={tagHeader}>
       <Sidebar />
       <Main>
-        <h1>{tagHeader}</h1>
-        <ul>
-          {edges.map(({ node }) => {
-            const { slug } = node.fields
-            const { title } = node.frontmatter
-            return (
-              <li key={slug}>
-                <Link to={slug}>{title}</Link>
-              </li>
-            )
-          })}
-        </ul>
-        <Link to="/tags">All tags</Link>
+        <Page title={tagHeader} nopadding>
+          <PostList posts={edges} />
+        </Page>
       </Main>
     </Layout>
   )
@@ -47,11 +39,15 @@ export const pageQuery = graphql`
       totalCount
       edges {
         node {
+          excerpt
           fields {
             slug
+            date(formatString: "MMMM DD, YYYY")
           }
           frontmatter {
             title
+            image
+            description
           }
         }
       }
