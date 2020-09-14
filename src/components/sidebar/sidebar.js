@@ -16,25 +16,25 @@ const Sidebar = ({ toc }) => {
           siteMetadata {
             title
             description
+            sidebarMenu {
+              url
+              label
+            }
+            footerHTML
           }
         }
       }
     `
   )
-  const sampleMenu = [
-    { url: "/tags", label: "Tags" },
-    { url: "#", label: "About Me" },
-    { url: "#", label: "Contact" },
-  ]
   return (
     <div className={styles.sidebar}>
       <SiteMeta
         title={site.siteMetadata.title}
         description={site.siteMetadata.description}
       />
-      <Menu menu={sampleMenu} />
+      <Menu menu={site.siteMetadata.sidebarMenu} />
       <TOC toc={toc} />
-      <Copyright />
+      <Copyright contentHTML={site.siteMetadata.footerHTML} />
     </div>
   )
 }

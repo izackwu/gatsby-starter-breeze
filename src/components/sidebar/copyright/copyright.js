@@ -1,8 +1,13 @@
 import React from "react"
 import styles from "./copyright.module.scss"
 
-const Copyright = () => {
-  return <div className={styles["copyright"]}>All rights reserved.</div>
+const Copyright = ({ contentHTML }) => {
+  return (
+    <div
+      className={styles["copyright"]}
+      dangerouslySetInnerHTML={{ __html: contentHTML }}
+    />
+  )
 }
 
 export default Copyright
