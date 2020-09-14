@@ -85,7 +85,6 @@ button {
 
 blockquote {
   padding: 10px 20px;
-  margin: 0;
   border-left: 3px solid rgba($color-accent, 0.7);
   color: $dark-accent;
   background: rgba($color-accent, 0.05);
@@ -102,5 +101,32 @@ a {
   &:hover {
     color: darken($color-accent, 10%);
     text-underline-position: under;
+  }
+}
+
+li {
+  p {
+    margin-bottom: 0;
+  }
+}
+
+code,
+kbd {
+  color: black;
+  background: rgba($color-accent, 0.07) !important;
+  padding: 2px 5px;
+  border-radius: 3px;
+}
+
+pre {
+  color: black;
+  background: rgba($color-accent, 0.07);
+  padding: 12px 15px;
+  border-radius: 5px;
+  * {
+    background: none !important;
+  }
+  code {
+    padding: 0;
   }
 }
