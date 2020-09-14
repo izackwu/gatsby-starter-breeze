@@ -57,6 +57,24 @@
     }
   }
 
+  &__info_compact {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    &__title {
+      font-size: $post-title-size;
+      font-weight: 600;
+      font-style: normal;
+      margin: 0;
+    }
+    &__date {
+      flex-shrink: 0;
+      font-size: $post-date-size;
+    }
+  }
+
   &__image {
     flex-shrink: 0;
     margin-left: 20px;
