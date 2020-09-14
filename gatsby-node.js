@@ -92,6 +92,12 @@ exports.createPages = async ({ graphql, actions }) => {
     path: "/tags/",
     component: tagsListTemplate,
   })
+
+  // Make archive page
+  createPage({
+    path: "/archive/",
+    component: path.resolve("src/templates/archive.js"),
+  })
 }
 
 exports.onCreateNode = ({ node, actions, getNode }) => {
