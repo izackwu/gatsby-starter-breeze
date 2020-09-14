@@ -3,15 +3,18 @@ import { graphql } from "gatsby"
 
 import Layout from "../components/layout"
 import Sidebar from "../components/sidebar"
+import Main from "../components/main"
+import Page from "../components/page"
 
 const NotFoundPage = () => {
   return (
     <Layout title="404: Not Found">
       <Sidebar />
-      <div>
-        <h1>Not Found</h1>
-        <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
-      </div>
+      <Main>
+        <Page title="404: Not Found">
+          <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
+        </Page>
+      </Main>
     </Layout>
   )
 }
