@@ -14,7 +14,7 @@ module.exports = {
     sidebarMenu: [
       { url: "/archive/", label: "归档" },
       { url: "/tags/", label: "标签" },
-      { url: "#", label: "About Me" },
+      { url: "/about", label: "About" },
       { url: "#", label: "Contact" },
     ],
     footerHTML: `© 2020 <a href="https://github.com/keithnull">Keith Null</a> All rights reserved.`,
