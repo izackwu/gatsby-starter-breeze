@@ -23,7 +23,10 @@ const Archive = ({ data }) => {
 
 export const query = graphql`
   {
-    allMarkdownRemark(sort: { fields: fields___date, order: DESC }) {
+    allMarkdownRemark(
+      filter: { frontmatter: { layout: { ne: "page" } } }
+      sort: { fields: fields___date, order: DESC }
+    ) {
       edges {
         node {
           fields {
