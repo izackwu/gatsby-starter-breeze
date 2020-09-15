@@ -5,6 +5,7 @@ const { createFilePath } = require(`gatsby-source-filesystem`)
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
 
+  const pageTemplate = path.resolve(`./src/templates/page.js`)
   const blogPost = path.resolve(`./src/templates/blog-post.js`)
   const postListPaginated = path.resolve(
     `./src/templates/post-list-paginated.js`
@@ -17,6 +18,21 @@ exports.createPages = async ({ graphql, actions }) => {
         postsRemark: allMarkdownRemark(
           filter: { frontmatter: { layout: { ne: "page" } } }
           sort: { fields: [fields___date], order: DESC }
+          limit: 1000
+        ) {
+          edges {
+            node {
+              fields {
+                slug
+              }
+              frontmatter {
+                title
+              }
+            }
+          }
+        }
+        pagesRemark: allMarkdownRemark(
+          filter: { frontmatter: { layout: { eq: "page" } } }
           limit: 1000
         ) {
           edges {
@@ -45,6 +61,18 @@ exports.createPages = async ({ graphql, actions }) => {
   if (result.errors) {
     throw result.errors
   }
+
+  // Create non-post pages
+  const pages = result.data.pagesRemark.edges
+  pages.forEach(page => {
+    createPage({
+      path: page.node.fields.slug,
+      component: pageTemplate,
+      context: {
+        slug: page.node.fields.slug,
+      },
+    })
+  })
 
   // Create blog posts pages.
   const posts = result.data.postsRemark.edges
