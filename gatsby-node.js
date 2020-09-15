@@ -151,9 +151,12 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
           .split(/.*[\/|\\]/)[1]
           .split(".")[0]
         date = new Date(filename.substring(0, 10))
+        if (isNaN(date)) {
+          throw "Invalid Date"
+        }
       }
     } catch (error) {
-      console.log("Failed to get date, use default date instead", error)
+      console.log("Failed to get date, use default date instead: ", error)
       date = new Date("1999-11-26")
     } finally {
       createNodeField({
