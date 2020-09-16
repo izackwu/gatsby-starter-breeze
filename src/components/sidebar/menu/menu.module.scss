@@ -24,5 +24,8 @@
       background: rgba($color-accent, $nav-item-active-background-alpha);
       color: darken($color-accent, $nav-item-active-color-darken);
     }
+    @media screen and (max-width: $max-single-column-width) {
+      font-size: $single-column-nav-link-size;
+    }
   }
 }

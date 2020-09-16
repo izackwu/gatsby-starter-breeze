@@ -34,15 +34,21 @@ $max-single-column-width: 1000px;
 $side-container-width: 25%;
 $main-container-width: 75%;
 // -- sidebar
-$nav-title-size: 30px;
-$nav-subtitle-size: 18px;
 $nav-item-hover-background-alpha: 0.02;
 $nav-item-hover-indicator-alpha: 0.6;
 $nav-item-hover-color-darken: 30%;
 $nav-item-active-background-alpha: 0.03;
 $nav-item-active-color-darken: 20%;
+$nav-title-size: 30px;
+$nav-subtitle-size: 18px;
 $nav-link-size: 20px;
 $nav-footer-size: 12px;
+$single-column-navbar-height: 60px;
+$single-column-drawer-width: 260px;
+$single-column-nav-title-size: 28px;
+$single-column-nav-subtitle-size: 18px;
+$single-column-nav-link-size: 18px;
+$single-column-nav-footer-size: 12px;
 // -- post list
 $post-title-size: 30px;
 $post-description-size: 16px;

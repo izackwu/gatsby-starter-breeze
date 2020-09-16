@@ -16,11 +16,17 @@
   &__title {
     font-size: $nav-title-size;
     line-height: $nav-title-size * 1.4;
+    @media screen and (max-width: $max-single-column-width) {
+      font-size: $single-column-nav-title-size;
+    }
   }
 
   &__description {
     margin-top: 8px;
     font-size: $nav-subtitle-size;
+    @media screen and (max-width: $max-single-column-width) {
+      font-size: $single-column-nav-subtitle-size;
+    }
   }
 
   &:hover {

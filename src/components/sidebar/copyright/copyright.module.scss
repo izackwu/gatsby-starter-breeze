@@ -3,4 +3,7 @@
 .copyright {
   padding: 20px 30px 0 20px;
   font-size: $nav-footer-size;
+  @media screen and (max-width: $max-single-column-width) {
+    font-size: $single-column-nav-footer-size;
+  }
 }

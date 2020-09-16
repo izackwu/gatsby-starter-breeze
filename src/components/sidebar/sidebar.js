@@ -1,5 +1,6 @@
-import React from "react"
-import { useStaticQuery, graphql } from "gatsby"
+import React, { useState } from "react"
+import { useStaticQuery, graphql, Link } from "gatsby"
+import { BiMenu } from "react-icons/bi"
 
 import SiteMeta from "./sitemeta"
 import Menu from "./menu"
@@ -26,8 +27,20 @@ const Sidebar = ({ toc }) => {
       }
     `
   )
+  const [open, setOpen] = useState(false)
+
+  const clickHandler = () => {
+    setOpen(!open)
+  }
+
   return (
-    <div className={styles.sidebar}>
+    <div className={styles.sidebar + (open ? " " + styles.open : "")}>
+      <div className={styles.mobileNav}>
+        <BiMenu className={styles.mobileNav__icon} onClick={clickHandler} />
+        <Link className={styles.mobileNav__title} to="/">
+          {site.siteMetadata.title}
+        </Link>
+      </div>
       <SiteMeta
         title={site.siteMetadata.title}
         description={site.siteMetadata.description}

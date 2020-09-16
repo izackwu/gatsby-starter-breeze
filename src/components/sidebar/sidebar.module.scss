@@ -13,9 +13,56 @@
   box-sizing: border-box;
   font-family: $ui-font-list;
   flex-shrink: 0;
+
   @media screen and (max-width: $max-single-column-width) {
-    width: 100%;
-    position: relative;
-    // display: none;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: -($single-column-drawer-width + 10px);
+    padding-top: $single-column-navbar-height;
+    padding-bottom: 20px;
+    width: $single-column-drawer-width;
+    background-color: $front-container-background;
+    box-shadow: 0 0 16px rgba(0, 0, 0, 0.12);
+    transition: all 0.6s ease-in-out;
+    overflow-y: auto;
+    .mobileNav {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: $single-column-navbar-height;
+      padding: 10px;
+      background-color: $front-container-background;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.12);
+      z-index: 5;
+    }
+    &.open {
+      left: 0;
+      .mobileNav {
+        &__icon {
+          transform: rotate(90deg);
+        }
+      }
+    }
+  }
+}
+
+.mobileNav {
+  display: none;
+  &__title {
+    font-size: $single-column-post-title-size;
+    color: $deep-dark-accent;
+    text-decoration: none !important;
+  }
+
+  &__icon {
+    font-size: $single-column-post-title-size;
+    transition: all 0.6s ease;
+    cursor: pointer;
   }
 }
