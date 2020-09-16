@@ -7,4 +7,8 @@
   flex-direction: row;
   justify-content: space-between;
   font-size: $pagination-size;
+
+  @media screen and (max-width: $max-single-column-width) {
+    padding: 15px 20px;
+  }
 }

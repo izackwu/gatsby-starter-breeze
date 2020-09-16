@@ -12,4 +12,10 @@
   justify-content: space-between;
   box-sizing: border-box;
   font-family: $ui-font-list;
+  flex-shrink: 0;
+  @media screen and (max-width: $max-single-column-width) {
+    width: 100%;
+    position: relative;
+    // display: none;
+  }
 }

@@ -14,6 +14,9 @@
     font-weight: 600;
     font-style: normal;
     line-height: 1.5em;
+    @media screen and (max-width: $max-single-column-width) {
+      padding: 10px 20px 0 20px;
+    }
     &__title {
       font-size: $post-title-size;
     }
@@ -51,6 +54,9 @@
     max-width: 100%;
     border-radius: 5px;
     overflow: hidden;
+  }
+  @media screen and (max-width: $max-single-column-width) {
+    padding: 20px;
   }
 }
 

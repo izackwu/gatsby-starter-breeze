@@ -9,4 +9,10 @@
   padding: 20px 0 20px 0;
   background: $front-container-background;
   box-shadow: 0 0 16px rgba(0, 0, 0, 0.12);
+
+  @media screen and (max-width: $max-single-column-width) {
+    width: 100%;
+    padding: 0;
+    // min-height: unset;
+  }
 }

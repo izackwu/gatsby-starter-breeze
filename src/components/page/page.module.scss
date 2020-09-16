@@ -11,10 +11,14 @@
   }
   &__title {
     padding: 10px 35px 0 35px;
+    margin-bottom: 0;
     font-weight: 600;
     font-style: normal;
     line-height: 1.5em;
     font-size: $post-title-size;
+    @media screen and (max-width: $max-single-column-width) {
+      padding: 10px 20px 0 20px;
+    }
   }
 }
 
@@ -29,5 +33,8 @@
     max-width: 100%;
     border-radius: 5px;
     overflow: hidden;
+  }
+  @media screen and (max-width: $max-single-column-width) {
+    padding: 20px;
   }
 }

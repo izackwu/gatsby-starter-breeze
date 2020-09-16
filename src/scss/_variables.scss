@@ -29,7 +29,8 @@ $h1-size: 30px;
 $h-diff: 3px;
 
 // Layout
-$layout-width: 1500px;
+$max-two-column-width: 1600px;
+$max-single-column-width: 1000px;
 $side-container-width: 25%;
 $main-container-width: 75%;
 // -- sidebar
@@ -47,6 +48,9 @@ $post-title-size: 30px;
 $post-description-size: 16px;
 $post-date-size: 16px;
 $post-body-size: 16px;
+$single-column-post-title-size: 22px;
+$single-column-post-description-size: 16px;
+$single-column-post-date-size: 14px;
 // -- pagination
 $pagination-size: 18px;
 // -- tags
