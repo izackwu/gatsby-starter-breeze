@@ -8,6 +8,9 @@
     margin-top: -20px;
     background: no-repeat center;
     background-size: cover;
+    @media screen and (max-width: $max-single-column-width) {
+      margin-top: 0;
+    }
   }
   &__info {
     padding: 10px 35px 0 35px;
