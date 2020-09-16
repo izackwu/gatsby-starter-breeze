@@ -1,12 +1,11 @@
 ---
-layout: post
 title: "Markup: Text Readability Test"
-excerpt: "A bunch of text to test readability."
-image: "https://images.unsplash.com/photo-1505051508008-923feaf90180?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&dl=anton-darius-ebHCU8n7G38-unsplash.jpg&w=2400"
 tags:
   - sample post
   - readability
   - test
+description: "A bunch of text to test readability."
+image: "https://source.unsplash.com/ebHCU8n7G38/1600x900"
 ---
 
 Portland in shoreditch Vice, labore typewriter pariatur hoodie fap sartorial Austin. Pinterest literally occupy Schlitz forage. Odio ad blue bottle vinyl, 90's narwhal commodo bitters pour-over nostrud. Ugh est hashtag in, fingerstache adipisicing laboris esse Pinterest shabby chic Portland. Shoreditch bicycle rights anim, flexitarian laboris put a bird on it vinyl cupidatat narwhal. Hashtag artisan skateboard, flannel Bushwick nesciunt salvia aute fixie do plaid post-ironic dolor McSweeney's. Cliche pour-over chambray nulla four loko skateboard sapiente hashtag.

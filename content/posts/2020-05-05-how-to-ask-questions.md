@@ -1,7 +1,11 @@
 ---
 title: 提问的智慧
-category: 中文
-description: 在[黑客](http://www.catb.org/~esr/faqs/hacker-howto.html)的世界里，当你拋出一个技术问题时，最终是否能得到有用的回答，往往取决于你所提问和追问的方式。本指南将教你如何正确的提问以获得你满意的答案。
+tags:
+  - 指南
+  - 黑客
+  - 中文
+  - 翻译
+description: 在黑客的世界里，当你拋出一个技术问题时，最终是否能得到有用的回答，往往取决于你所提问和追问的方式。本指南将教你如何正确的提问以获得你满意的答案。
 ---
 
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](https://github.com/ryanhanwu/How-To-Ask-Questions-The-Smart-Way/pulls)

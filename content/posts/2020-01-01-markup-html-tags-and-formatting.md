@@ -1,7 +1,6 @@
 ---
-layout: post
 title: "Markup: HTML Tags and Formatting"
-category: Markup
+description: A variety of common markup showing how the theme styles them.
 tags:
   - content
   - css
