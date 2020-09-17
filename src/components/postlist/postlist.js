@@ -3,7 +3,6 @@ import React from "react"
 import styles from "./postlist.module.scss"
 
 const PostList = ({ posts, compact }) => {
-  console.log(styles)
   return (
     <div className={styles["postlist"]}>
       {posts.map(({ node }) => (

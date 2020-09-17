@@ -137,7 +137,6 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
   if (node.internal.type === `MarkdownRemark`) {
     // slug
     let slug = node.frontmatter.slug || createFilePath({ node, getNode })
-    console.log("Slug:", slug)
     createNodeField({
       node,
       name: "slug",
@@ -156,7 +155,14 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
         }
       }
     } catch (error) {
-      console.log("Failed to get date, use default date instead: ", error)
+      console.warn(
+        "Failed to get date from frontmatter or filename, use default date instead.",
+        {
+          slug: slug,
+          filepath: node.fileAbsolutePath,
+          error: error,
+        }
+      )
       date = new Date("1999-11-26")
     } finally {
       createNodeField({
@@ -164,7 +170,6 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
         name: "date",
         value: date,
       })
-      console.log("date:", date)
     }
   }
 }
