@@ -1,6 +1,6 @@
 import React from "react"
-import styles from "./layout.module.scss"
 import SEO from "./seo"
+import styles from "./layout.module.scss"
 
 const Layout = ({ title, description, socialImage, children, meta }) => {
   return (

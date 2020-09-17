@@ -1,12 +1,11 @@
+import { Link, graphql, useStaticQuery } from "gatsby"
 import React, { useState } from "react"
-import { useStaticQuery, graphql, Link } from "gatsby"
+
 import { BiMenu } from "react-icons/bi"
-
-import SiteMeta from "./sitemeta"
-import Menu from "./menu"
-import TOC from "./toc"
 import Copyright from "./copyright"
-
+import Menu from "./menu"
+import SiteMeta from "./sitemeta"
+import TOC from "./toc"
 import styles from "./sidebar.module.scss"
 
 const Sidebar = ({ toc }) => {

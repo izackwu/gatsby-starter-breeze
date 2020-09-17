@@ -1,12 +1,10 @@
-import React from "react"
-import { graphql } from "gatsby"
-
-// Components
-import Sidebar from "../components/sidebar"
 import Layout from "../components/layout"
 import Main from "../components/main"
 import Page from "../components/page"
+import React from "react"
+import Sidebar from "../components/sidebar"
 import Tags from "../components/tags"
+import { graphql } from "gatsby"
 
 const TagsPage = ({
   data: {

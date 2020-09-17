@@ -1,5 +1,4 @@
 import React from "react"
-
 import styles from "./toc.module.scss"
 
 const TOC = ({ toc }) => {

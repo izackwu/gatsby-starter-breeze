@@ -1,11 +1,10 @@
-import React from "react"
-import { graphql } from "gatsby"
-
 import Layout from "../components/layout"
-import Sidebar from "../components/sidebar"
 import Main from "../components/main"
-import PostList from "../components/postlist"
 import Pagination from "../components/pagination"
+import PostList from "../components/postlist"
+import React from "react"
+import Sidebar from "../components/sidebar"
+import { graphql } from "gatsby"
 
 const BlogIndex = ({ data, pageContext }) => {
   const posts = data.allMarkdownRemark.edges

@@ -1,11 +1,10 @@
-import React from "react"
-import { graphql } from "gatsby"
-
 import Layout from "../components/layout"
-import Sidebar from "../components/sidebar"
 import Main from "../components/main"
 import Pagination from "../components/pagination"
 import Post from "../components/post"
+import React from "react"
+import Sidebar from "../components/sidebar"
+import { graphql } from "gatsby"
 
 const BlogPostTemplate = ({ data, pageContext }) => {
   const post = data.markdownRemark

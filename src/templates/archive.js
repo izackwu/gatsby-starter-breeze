@@ -1,11 +1,10 @@
-import React from "react"
-import { graphql } from "gatsby"
-
 import Layout from "../components/layout"
-import Sidebar from "../components/sidebar"
 import Main from "../components/main"
 import Page from "../components/page"
 import PostList from "../components/postlist"
+import React from "react"
+import Sidebar from "../components/sidebar"
+import { graphql } from "gatsby"
 
 const Archive = ({ data }) => {
   const posts = data.allMarkdownRemark.edges

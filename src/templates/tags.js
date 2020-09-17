@@ -1,12 +1,10 @@
-import React from "react"
-import { graphql } from "gatsby"
-
-// Components
-import Sidebar from "../components/sidebar"
 import Layout from "../components/layout"
 import Main from "../components/main"
 import Page from "../components/page"
 import PostList from "../components/postlist"
+import React from "react"
+import Sidebar from "../components/sidebar"
+import { graphql } from "gatsby"
 
 const Tags = ({ pageContext, data }) => {
   const { tag } = pageContext
