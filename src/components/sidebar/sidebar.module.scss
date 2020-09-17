@@ -13,6 +13,7 @@
   box-sizing: border-box;
   font-family: $ui-font-list;
   flex-shrink: 0;
+  z-index: 9;
 
   @media screen and (max-width: $max-single-column-width) {
     position: fixed;
