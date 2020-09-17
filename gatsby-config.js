@@ -63,6 +63,7 @@ module.exports = {
                 title
                 description
                 siteUrl
+                site_url: siteUrl
               }
             }
           }
@@ -105,7 +106,6 @@ module.exports = {
               }
             `,
             output: "/rss.xml",
-            title: "RSS Feed",
           },
         ],
       },
