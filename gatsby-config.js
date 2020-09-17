@@ -1,11 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: `清风朗月`,
-    author: {
-      name: `无辄`,
-      photo: "/profile-pic.jpg",
-      summary: `生生灯火，明暗无辄`,
-    },
+    image: "/gatsby-icon.png",
     description: `Gatsby Starter Breeze`,
     siteUrl: `https://gatsby-starter-breeze.netlify.app/`,
     social: {
@@ -118,8 +114,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Gatsby Starter Blog`,
-        short_name: `GatsbyJS`,
+        name: `Gatsby Starter Breeze`,
+        short_name: `Breeze`,
         start_url: `/`,
         background_color: `#ffffff`,
         theme_color: `#663399`,

@@ -19,11 +19,9 @@ const SEO = ({ description, lang, meta, title, socialImage }) => {
           siteMetadata {
             title
             description
+            image
             social {
               twitter
-            }
-            author {
-              photo
             }
           }
         }
@@ -32,7 +30,7 @@ const SEO = ({ description, lang, meta, title, socialImage }) => {
   )
 
   const metaDescription = description || site.siteMetadata.description
-  const metaImage = socialImage || site.siteMetadata.author.photo
+  const metaImage = socialImage || site.siteMetadata.image
 
   return (
     <Helmet
