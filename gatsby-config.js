@@ -7,7 +7,7 @@ module.exports = {
       summary: `生生灯火，明暗无辄`,
     },
     description: `Gatsby Starter Breeze`,
-    siteUrl: `https://gatsby-starter-blog-demo.netlify.app/`,
+    siteUrl: `https://gatsby-starter-breeze.netlify.app/`,
     social: {
       twitter: `_keithnull`,
     },
@@ -89,6 +89,7 @@ module.exports = {
               {
                 allMarkdownRemark(
                   sort: { order: DESC, fields: [fields___date] },
+                  filter: {frontmatter: {layout: {ne: "page"}}},
                 ) {
                   edges {
                     node {
