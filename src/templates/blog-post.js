@@ -17,7 +17,7 @@ const BlogPostTemplate = ({ data, pageContext }) => {
       description={post.frontmatter.description || post.excerpt}
       socialImage={post.frontmatter.image}
     >
-      <Sidebar />
+      <Sidebar toc={post.tableOfContents} />
       <Main>
         <Post post={post} />
         <Pagination
@@ -44,6 +44,7 @@ export const pageQuery = graphql`
       id
       excerpt(pruneLength: 160)
       html
+      tableOfContents(absolute: false, maxDepth: 3)
       fields {
         date(formatString: "MMMM DD, YYYY")
       }
