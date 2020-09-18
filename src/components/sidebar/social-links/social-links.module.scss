@@ -1,0 +1,47 @@
+@import "../../../scss/variables";
+
+.social {
+  width: 100%;
+  padding: 30px 28px 30px 20px;
+  flex-grow: 9999;
+  &__list {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+    flex-wrap: wrap;
+    font-size: $social-icon-size;
+    margin: 0;
+    margin-left: auto;
+    max-width: 70%;
+    padding: 0;
+    &__item {
+      padding: 0;
+      margin: 0.25em;
+      margin-right: 0;
+      display: flex;
+      align-content: center;
+      align-items: center;
+      justify-content: center;
+      height: $social-icon-outline-size;
+      width: $social-icon-outline-size;
+      border-radius: 50%;
+      text-align: center;
+      border: 1px solid rgba(128, 128, 128, 0.12);
+
+      & > a {
+        border: 0;
+        display: flex;
+        & > svg {
+          fill: $deep-dark-accent;
+        }
+        &:hover,
+        &:focus {
+          & > svg {
+            fill: $color-accent;
+          }
+        }
+      }
+    }
+  }
+}

@@ -5,7 +5,16 @@ module.exports = {
     description: `Gatsby Starter Breeze`,
     siteUrl: `https://gatsby-starter-breeze.netlify.app/`,
     social: {
-      twitter: `_keithnull`,
+      douban: "#",
+      email: "#",
+      facebook: "#",
+      github: "#",
+      instagram: "#",
+      linkedin: "#",
+      rss: "/rss.xml",
+      telegram: "#",
+      twitter: "#",
+      youtube: "#",
     },
     sidebarMenu: [
       { url: "/archive/", label: "归档" },
