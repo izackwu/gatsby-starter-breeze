@@ -1,3 +1,6 @@
+import "@suziwen/gitalk/dist/gitalk.css"
+
+import Gitalk from "gatsby-plugin-gitalk"
 import Layout from "../components/layout"
 import Main from "../components/main"
 import Pagination from "../components/pagination"
@@ -25,6 +28,19 @@ const BlogPostTemplate = ({ data, pageContext }) => {
           nextLink={next && next.fields.slug}
           nextText={next && next.frontmatter.title + " →"}
         />
+        <div
+          style={{
+            paddingLeft: `35px`,
+            paddingRight: `35px`,
+          }}
+        >
+          <Gitalk
+            options={{
+              id: post.slug,
+              title: post.title,
+            }}
+          />
+        </div>
       </Main>
     </Layout>
   )
