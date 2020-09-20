@@ -23,6 +23,7 @@ const SEO = ({ description, lang, meta, title, socialImage }) => {
             social {
               twitter
             }
+            language
           }
         }
       }
@@ -35,7 +36,7 @@ const SEO = ({ description, lang, meta, title, socialImage }) => {
   return (
     <Helmet
       htmlAttributes={{
-        lang,
+        lang: lang || site.siteMetadata.language,
       }}
       title={title}
       titleTemplate={`%s | ${site.siteMetadata.title}`}
@@ -86,7 +87,7 @@ const SEO = ({ description, lang, meta, title, socialImage }) => {
 }
 
 SEO.defaultProps = {
-  lang: `en`,
+  lang: ``,
   meta: [],
   description: ``,
 }

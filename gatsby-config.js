@@ -23,6 +23,7 @@ module.exports = {
     ],
     footerHTML: `© 2020 <a href="https://github.com/keithnull">Keith Null</a> All rights reserved.`,
     dateFormat: `YYYY-MM-DD`,
+    language: `zh`,
   },
   plugins: [
     {
