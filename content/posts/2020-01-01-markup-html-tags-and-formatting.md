@@ -45,16 +45,6 @@ Multi line blockquote with a cite reference:
 | [Fred Bloggs](#) | \$100M | Pictures are worth a thousand words, right? So Jane × 1,000. |
 | [Jane Bloggs](#) | \$100B | With hair like that?! Enough said.                           |
 
-| Header1                       | Header2 | Header3 |
-| :---------------------------- | :-----: | ------: |
-| cell1                         |  cell2  |   cell3 |
-| cell4                         |  cell5  |   cell6 |
-| ----------------------------- |
-| cell1                         |  cell2  |   cell3 |
-| cell4                         |  cell5  |   cell6 |
-| ============================= |
-| Foot1                         |  Foot2  |   Foot3 |
-
 ## Definition Lists
 
 Definition List Title
