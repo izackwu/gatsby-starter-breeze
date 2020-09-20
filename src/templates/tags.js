@@ -28,7 +28,7 @@ const Tags = ({ pageContext, data }) => {
 export default Tags
 
 export const pageQuery = graphql`
-  query($tag: String) {
+  query($tag: String, $dateFormat: String) {
     allMarkdownRemark(
       limit: 2000
       sort: { fields: [fields___date], order: DESC }
@@ -40,7 +40,7 @@ export const pageQuery = graphql`
           excerpt
           fields {
             slug
-            date(formatString: "MMMM DD, YYYY")
+            date(formatString: $dateFormat)
           }
           frontmatter {
             title

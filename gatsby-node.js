@@ -15,6 +15,11 @@ exports.createPages = async ({ graphql, actions }) => {
   const result = await graphql(
     `
       {
+        site {
+          siteMetadata {
+            dateFormat
+          }
+        }
         postsRemark: allMarkdownRemark(
           filter: { frontmatter: { layout: { ne: "page" } } }
           sort: { fields: [fields___date], order: DESC }
@@ -61,7 +66,7 @@ exports.createPages = async ({ graphql, actions }) => {
   if (result.errors) {
     throw result.errors
   }
-
+  const dateFormat = result.data.site.siteMetadata.dateFormat || "YYYY-MM-DD"
   // Create non-post pages
   const pages = result.data.pagesRemark.edges
   pages.forEach(page => {
@@ -70,6 +75,7 @@ exports.createPages = async ({ graphql, actions }) => {
       component: pageTemplate,
       context: {
         slug: page.node.fields.slug,
+        dateFormat: dateFormat,
       },
     })
   })
@@ -87,6 +93,7 @@ exports.createPages = async ({ graphql, actions }) => {
         slug: post.node.fields.slug,
         previous,
         next,
+        dateFormat: dateFormat,
       },
     })
   })
@@ -105,6 +112,7 @@ exports.createPages = async ({ graphql, actions }) => {
           totalPage: numPages,
           limit: postsPerPage,
           skip: i * postsPerPage,
+          dateFormat: dateFormat,
         },
       })
     })
@@ -117,6 +125,7 @@ exports.createPages = async ({ graphql, actions }) => {
       component: tagsTemplate,
       context: {
         tag: tag.fieldValue,
+        dateFormat: dateFormat,
       },
     })
   })
@@ -129,6 +138,9 @@ exports.createPages = async ({ graphql, actions }) => {
   createPage({
     path: "/archive/",
     component: path.resolve("src/templates/archive.js"),
+    context: {
+      dateFormat: dateFormat,
+    },
   })
 }
 

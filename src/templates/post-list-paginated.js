@@ -31,12 +31,7 @@ const BlogIndex = ({ data, pageContext }) => {
 export default BlogIndex
 
 export const pageQuery = graphql`
-  query($skip: Int!, $limit: Int!) {
-    site {
-      siteMetadata {
-        title
-      }
-    }
+  query($skip: Int!, $limit: Int!, $dateFormat: String) {
     allMarkdownRemark(
       sort: { fields: [fields___date], order: DESC }
       filter: { frontmatter: { layout: { ne: "page" } } }
@@ -47,7 +42,7 @@ export const pageQuery = graphql`
         node {
           excerpt
           fields {
-            date(formatString: "MMMM DD, YYYY")
+            date(formatString: $dateFormat)
             slug
           }
           frontmatter {
