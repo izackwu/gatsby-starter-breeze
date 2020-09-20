@@ -29,7 +29,7 @@ const Post = ({ post }) => {
               <FaTags className={styles["icon"]} />
               <ol>
                 {post.frontmatter.tags.map(tag => (
-                  <li>
+                  <li key={tag}>
                     <Link to={`/tags/${_.kebabCase(tag)}/`}>{tag}</Link>
                   </li>
                 ))}

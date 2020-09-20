@@ -90,6 +90,7 @@ module.exports = {
             serialize: ({ query: { site, allMarkdownRemark } }) => {
               return allMarkdownRemark.edges.map(edge => {
                 return Object.assign({}, edge.node.frontmatter, {
+                  title: edge.node.frontmatter.title,
                   description:
                     edge.node.frontmatter.description || edge.node.excerpt,
                   date: edge.node.fields.date,
@@ -123,6 +124,7 @@ module.exports = {
               }
             `,
             output: "/rss.xml",
+            title: "清风朗月",
           },
         ],
       },

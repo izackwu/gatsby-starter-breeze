@@ -11,6 +11,7 @@ const Menu = ({ menu }) => {
             to={item.url}
             className={styles["menu__item"]}
             activeClassName={styles["menu__item_active"]}
+            key={item.url}
           >
             {item.label}
           </Link>
