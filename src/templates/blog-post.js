@@ -36,8 +36,8 @@ const BlogPostTemplate = ({ data, pageContext }) => {
         >
           <Gitalk
             options={{
-              id: post.slug,
-              title: post.title,
+              id: pageContext.slug,
+              title: post.frontmatter.title,
             }}
           />
         </div>
