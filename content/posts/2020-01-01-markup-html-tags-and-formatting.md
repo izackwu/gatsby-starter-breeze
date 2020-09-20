@@ -34,7 +34,6 @@ Multi line blockquote with a cite reference:
 > People think focus means saying yes to the thing you've got to focus on. But that's not what it means at all. It means saying no to the hundred other good ideas that there are. You have to pick carefully. I'm actually as proud of the things we haven't done as the things I have done. Innovation is saying no to 1,000 things.
 
 <cite>Steve Jobs</cite> --- Apple Worldwide Developers' Conference, 1997
-{: .small}
 
 ## Tables
 
@@ -44,20 +43,6 @@ Multi line blockquote with a cite reference:
 | [Jane Doe](#)    | \$100K | For all the blogging she does.                               |
 | [Fred Bloggs](#) | \$100M | Pictures are worth a thousand words, right? So Jane × 1,000. |
 | [Jane Bloggs](#) | \$100B | With hair like that?! Enough said.                           |
-
-## Definition Lists
-
-Definition List Title
-: Definition list division.
-
-Startup
-: A startup company or startup is a company or temporary organization designed to search for a repeatable and scalable business model.
-
-#dowork
-: Coined by Rob Dyrdek and his personal body guard Christopher "Big Black" Boykins, "Do Work" works as a self motivator, to motivating your friends.
-
-Do It Live
-: I'll let Bill O'Reilly [explain](https://www.youtube.com/watch?v=O_HyZ5aW76c "We'll Do It Live") this one.
 
 ## Unordered Lists (Nested)
 
@@ -88,33 +73,6 @@ Do It Live
 2. List item two
 3. List item three
 4. List item four
-
-## Buttons
-
-Make any link standout more when applying the `.btn` class.
-
-```html
-<a href="#" class="btn_success">Success Button</a>
-```
-
-[Primary Button](#){: .btn}
-[Success Button](#){: .btn .btn_success}
-[Warning Button](#){: .btn .btn_warning}
-[Danger Button](#){: .btn .btn_danger}
-[Info Button](#){: .btn .btn_info}
-
-```markdown
-[Primary Button Text](#link){: .btn}
-[Success Button Text](#link){: .btn .btn_success}
-[Warning Button Text](#link){: .btn .btn_warning}
-[Danger Button Text](#link){: .btn .btn_danger}
-[Info Button Text](#link){: .btn .btn_info}
-```
-
-## Notices
-
-**Watch out!** You can also add notices by appending `{: .notice}` to a paragraph.
-{: .notice}
 
 ## HTML Tags
 
