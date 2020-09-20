@@ -1,4 +1,4 @@
-import "@suziwen/gitalk/dist/gitalk.css"
+import "../scss/gitalk.scss"
 
 import Gitalk from "gatsby-plugin-gitalk"
 import Layout from "../components/layout"
