@@ -21,7 +21,7 @@ const Archive = ({ data }) => {
 }
 
 export const query = graphql`
-  {
+  query($dateFormat: String) {
     allMarkdownRemark(
       filter: { frontmatter: { layout: { ne: "page" } } }
       sort: { fields: fields___date, order: DESC }
@@ -29,7 +29,7 @@ export const query = graphql`
       edges {
         node {
           fields {
-            date(formatString: "MMMM DD, YYYY")
+            date(formatString: $dateFormat)
             slug
           }
           frontmatter {

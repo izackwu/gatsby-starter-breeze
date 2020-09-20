@@ -31,7 +31,7 @@ const BlogIndex = ({ data, pageContext }) => {
 export default BlogIndex
 
 export const pageQuery = graphql`
-  query($skip: Int!, $limit: Int!) {
+  query($skip: Int!, $limit: Int!, $dateFormat: String) {
     site {
       siteMetadata {
         title
@@ -47,7 +47,7 @@ export const pageQuery = graphql`
         node {
           excerpt
           fields {
-            date(formatString: "MMMM DD, YYYY")
+            date(formatString: $dateFormat)
             slug
           }
           frontmatter {

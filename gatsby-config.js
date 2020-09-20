@@ -22,6 +22,7 @@ module.exports = {
       { url: "/about", label: "About" },
     ],
     footerHTML: `© 2020 <a href="https://github.com/keithnull">Keith Null</a> All rights reserved.`,
+    dateFormat: `YYYY-MM-DD`,
   },
   plugins: [
     {

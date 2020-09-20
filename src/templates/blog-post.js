@@ -33,7 +33,7 @@ const BlogPostTemplate = ({ data, pageContext }) => {
 export default BlogPostTemplate
 
 export const pageQuery = graphql`
-  query BlogPostBySlug($slug: String!) {
+  query BlogPostBySlug($slug: String!, $dateFormat: String) {
     site {
       siteMetadata {
         title
@@ -45,7 +45,7 @@ export const pageQuery = graphql`
       html
       tableOfContents(absolute: false, maxDepth: 3)
       fields {
-        date(formatString: "MMMM DD, YYYY")
+        date(formatString: $dateFormat)
       }
       frontmatter {
         title
