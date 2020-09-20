@@ -6,7 +6,10 @@ const PostList = ({ posts, compact }) => {
   return (
     <div className={styles["postlist"]}>
       {posts.map(({ node }) => (
-        <div className={styles["postlist__item_wrapper"]}>
+        <div
+          className={styles["postlist__item_wrapper"]}
+          key={node.fields.slug}
+        >
           <Link to={node.fields.slug} className={styles["item"]}>
             <div
               className={
