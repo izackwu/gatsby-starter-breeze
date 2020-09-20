@@ -17,6 +17,7 @@ const SocialLinks = ({ social }) => {
                     href={getLink(sitename, username)}
                     rel="noopener noreferrer"
                     target="_blank"
+                    aria-label={sitename}
                   >
                     {getIcon(sitename)}
                   </a>
