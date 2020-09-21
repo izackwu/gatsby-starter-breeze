@@ -147,11 +147,10 @@ module.exports = {
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-sass`,
     {
-      resolve: "gatsby-plugin-web-font-loader",
+      resolve: `gatsby-plugin-google-fonts`,
       options: {
-        google: {
-          families: ["Noto Serif SC", "Quicksand"],
-        },
+        fonts: [`Quicksand`, `Noto Serif SC`],
+        display: "swap",
       },
     },
     {
