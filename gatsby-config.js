@@ -24,17 +24,6 @@ module.exports = {
     footerHTML: `© 2020 <a href="https://github.com/keithnull">Keith Null</a> All rights reserved.`,
     dateFormat: `YYYY-MM-DD`,
     language: `zh`,
-    gitalkConfig: {
-      clientID: "ee045e67607d9cc5d75b",
-      clientSecret: "c0f18c2238127559210f0bf94711a5c345eea7f8",
-      repo: "gatsby-starter-breeze",
-      owner: "keithnull",
-      admin: ["keithnull"],
-      pagerDirection: "last",
-      createIssueManually: true,
-      distractionFreeMode: true,
-      enableHotKey: true,
-    },
   },
   plugins: [
     {
@@ -162,6 +151,22 @@ module.exports = {
       options: {
         fonts: [`Quicksand`, `Noto Serif SC`],
         display: "swap",
+      },
+    },
+    {
+      resolve: "gatsby-plugin-gitalk",
+      options: {
+        config: {
+          clientID: "ee045e67607d9cc5d75b",
+          clientSecret: "c0f18c2238127559210f0bf94711a5c345eea7f8",
+          repo: "gatsby-starter-breeze",
+          owner: "keithnull",
+          admin: ["keithnull"],
+          pagerDirection: "last",
+          createIssueManually: true,
+          distractionFreeMode: true,
+          enableHotKey: true,
+        },
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
