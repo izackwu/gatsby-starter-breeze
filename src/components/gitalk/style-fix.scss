@@ -1,0 +1,13 @@
+// fix styles for Gitalk component
+
+.gt-container {
+  * {
+    color: inherit;
+    background-color: inherit;
+    font-family: inherit;
+  }
+
+  .gt-svg {
+    vertical-align: baseline;
+  }
+}
