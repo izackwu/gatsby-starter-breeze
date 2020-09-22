@@ -153,18 +153,6 @@ module.exports = {
         display: "swap",
       },
     },
-    {
-      resolve: `gatsby-plugin-gitalk`,
-      options: {
-        config: {
-          clientID: "ee045e67607d9cc5d75b",
-          clientSecret: "c0f18c2238127559210f0bf94711a5c345eea7f8",
-          repo: "gatsby-starter-breeze",
-          owner: "keithnull",
-          admin: ["keithnull"],
-        },
-      },
-    },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
