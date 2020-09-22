@@ -26,7 +26,9 @@ const BlogPostTemplate = ({ data, pageContext }) => {
           nextLink={next && next.fields.slug}
           nextText={next && next.frontmatter.title + " →"}
         />
-        <MyGitalk id={pageContext.slug} title={post.frontmatter.title} />
+        {!post.frontmatter.noComments && (
+          <MyGitalk id={pageContext.slug} title={post.frontmatter.title} />
+        )}
       </Main>
     </Layout>
   )
@@ -48,6 +50,7 @@ export const pageQuery = graphql`
         description
         tags
         image
+        noComments
       }
     }
   }
