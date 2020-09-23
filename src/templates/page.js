@@ -1,11 +1,12 @@
 import Layout from "../components/layout"
 import Main from "../components/main"
+import MyGitalk from "../components/gitalk"
 import Page from "../components/page"
 import React from "react"
 import Sidebar from "../components/sidebar"
 import { graphql } from "gatsby"
 
-const PageTemplate = ({ data }) => {
+const PageTemplate = ({ data, pageContext }) => {
   const page = data.markdownRemark
 
   return (
@@ -19,6 +20,9 @@ const PageTemplate = ({ data }) => {
         <Page title={page.frontmatter.title} image={page.frontmatter.image}>
           <div dangerouslySetInnerHTML={{ __html: page.html }} />
         </Page>
+        {!page.frontmatter.noComments && (
+          <MyGitalk id={pageContext.slug} title={page.frontmatter.title} />
+        )}
       </Main>
     </Layout>
   )
@@ -35,6 +39,7 @@ export const pageQuery = graphql`
         title
         image
         description
+        noComments
       }
     }
   }
