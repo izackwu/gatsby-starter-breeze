@@ -60,7 +60,7 @@ export const getLink = (sitename, username) => {
     case "telegram":
       return `https://t.me/${username}`
     case "twitter":
-      return `https://www.twitter.com/${username}`
+      return `https://twitter.com/${username}`
     case "youtube":
       return `https://www.youtube.com/channel/${username}`
     default:
