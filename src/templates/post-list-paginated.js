@@ -9,9 +9,12 @@ import { graphql } from "gatsby"
 const BlogIndex = ({ data, pageContext }) => {
   const posts = data.allMarkdownRemark.edges
   const { totalPage, currentPage } = pageContext
-
+  const description =
+    currentPage > 1
+      ? `本站文章列表：第 ${currentPage} 页，共 ${totalPage} 页。`
+      : ""
   return (
-    <Layout title="All posts">
+    <Layout title="Posts" description={description}>
       <Sidebar />
       <Main>
         <PostList posts={posts} />

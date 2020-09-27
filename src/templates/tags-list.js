@@ -11,10 +11,13 @@ const TagsPage = ({
     allMarkdownRemark: { group },
   },
 }) => (
-  <Layout title="All Tags">
+  <Layout
+    title="Tags"
+    description="本站文章的所有标签，以及标签所包含的文章数量。"
+  >
     <Sidebar />
     <Main>
-      <Page title="All Tags">
+      <Page title="Tags">
         <Tags tags={group} />
       </Page>
     </Main>

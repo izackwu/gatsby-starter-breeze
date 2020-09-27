@@ -9,7 +9,7 @@ import { graphql } from "gatsby"
 const Archive = ({ data }) => {
   const posts = data.allMarkdownRemark.edges
   return (
-    <Layout title="Archive">
+    <Layout title="Archive" description="本站所有文章，尽在此处，一览无余。">
       <Sidebar />
       <Main>
         <Page title="Archive" nopadding>
