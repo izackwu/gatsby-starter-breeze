@@ -9,12 +9,13 @@ import { graphql } from "gatsby"
 const Tags = ({ pageContext, data }) => {
   const { tag } = pageContext
   const { edges, totalCount } = data.allMarkdownRemark
-  const tagHeader = `${totalCount} post${
-    totalCount === 1 ? "" : "s"
-  } tagged with "${tag}"`
+  const tagHeader = `Tag: ${tag}`
 
   return (
-    <Layout title={tagHeader}>
+    <Layout
+      title={tagHeader}
+      description={`「${tag}」标签下共有 ${totalCount} 篇文章。`}
+    >
       <Sidebar />
       <Main>
         <Page title={tagHeader} nopadding>
